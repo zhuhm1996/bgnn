@@ -13,4 +13,5 @@ The code is tested by server with RTX 1080Ti in a docker container which include
 * numpy 1.13.3
 * scipy 1.0.0
 * networkx 2.0
+
 In addition, CUDA 8.0 and cuDNN 6 have been used.
