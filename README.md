@@ -16,7 +16,7 @@ The code is tested by server with RTX 1080Ti running in a docker container which
 
 In addition, CUDA 8.0 and cuDNN 6 have been used.
 
-## Examples to run BGNN
+## Example to run BGNN
 
 ## Dataset
 We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer. Download from this [github](https://github.com/tkipf/gcn).
