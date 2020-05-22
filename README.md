@@ -1,5 +1,5 @@
 # BGNN
-This is the TensorFlow implementation of our IJCAI 2020 paper:
+This is the TensorFlow implementation of our paper accepted by IJCAI 2020:
 
 >Hongmin Zhu, Fuli Feng, Xiangnan He, Xiang Wang, Yan Li, Kai Zheng, Yongdong Zhang, Bilinear Graph Neural Network with Neighbor Interactions. [Paper in arXiv](https://arxiv.org/abs/2002.03575).
 
