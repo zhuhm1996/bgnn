@@ -19,4 +19,4 @@ In addition, CUDA 8.0 and cuDNN 6 have been used.
 ## Example to run BGNN
 
 ## Dataset
-We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer. Download from this [github](https://github.com/tkipf/gcn).
+We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer. Download from [this](https://github.com/tkipf/gcn).
