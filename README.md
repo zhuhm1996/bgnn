@@ -15,3 +15,7 @@ The code is tested by server with RTX 1080Ti running in a docker container which
 * networkx 2.0
 
 In addition, CUDA 8.0 and cuDNN 6 have been used.
+
+## Examples to run BGNN
+
+## Dataset
