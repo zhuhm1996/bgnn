@@ -50,5 +50,39 @@ Epoch: 2000 train_loss= 1.57679 train_acc= 0.8583 val_loss= 1.69942 val_acc= 0.6
 test_loss= 1.71482 test_acc= 0.7080
 early stop #epoch 893 val_loss= 1.71812 val_acc= 0.6860
 ```
+### 1-layer BGAT-A
+* Command
+```
+cd BGAT/1-layer/BGAT-A/
+python gat.py --head 1 --feadrop 0.0 --attdrop 0.6 --weight_decay 5e-4 --alpha 0.9 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79173 train_acc= 0.1583 val_loss= 1.79085 val_acc= 0.3160 tst_loss= 1.79142 tst_acc= 0.2620 time= 3.564
+Epoch: 0002 train_loss= 1.79165 train_acc= 0.1833 val_loss= 1.79147 val_acc= 0.3700 tst_loss= 1.79160 tst_acc= 0.3200 time= 0.227
+...
+Epoch: 1312 train_loss= 1.74598 train_acc= 0.4583 val_loss= 1.76272 val_acc= 0.6640 tst_loss= 1.76328 tst_acc= 0.6950 time= 0.222
+Epoch: 1313 train_loss= 1.73696 train_acc= 0.4417 val_loss= 1.76269 val_acc= 0.6680 tst_loss= 1.76322 tst_acc= 0.6950 time= 0.230
+Early stop!
+test_loss= 1.77900 test_acc= 0.7180
+early stop #epoch 297 val_loss= 1.77891 val_acc= 0.7200
+```
+### 1-layer BGAT-T
+* Command
+```
+cd BGAT/1-layer/BGAT-T/
+python gat.py --head 1 --feadrop 0.4 --attdrop 0.6 --weight_decay 5e-4 --alpha 0.9 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79172 train_acc= 0.2333 val_loss= 1.79192 val_acc= 0.1700 tst_loss= 1.79161 tst_acc= 0.1990 time= 3.325
+Epoch: 0002 train_loss= 1.79166 train_acc= 0.1667 val_loss= 1.79168 val_acc= 0.1980 tst_loss= 1.79161 tst_acc= 0.2360 time= 0.222
+...
+Epoch: 1058 train_loss= 1.75115 train_acc= 0.4333 val_loss= 1.76869 val_acc= 0.6780 tst_loss= 1.76848 tst_acc= 0.6680 time= 0.281
+Epoch: 1059 train_loss= 1.74892 train_acc= 0.4000 val_loss= 1.76859 val_acc= 0.6820 tst_loss= 1.76831 tst_acc= 0.6790 time= 0.280
+Early stop!
+test_loss= 1.77275 test_acc= 0.7300
+early stop #epoch 582 val_loss= 1.77321 val_acc= 0.7120
+```
 ## Dataset
 We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer.
