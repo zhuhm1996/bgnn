@@ -150,5 +150,6 @@ Early stop!
 test_loss= 1.54286 test_acc= 0.7400
 early stop #epoch 492 val_loss= 1.54243 val_acc= 0.7440
 ```
+Besides, we provide another possible interaction scope which only considers the interactions between neighbors in graphs (see BGCN-N and BGAT-N).
 ## Dataset
 We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer.
