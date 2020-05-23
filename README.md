@@ -8,11 +8,11 @@ We propose a new graph convolution operator, augmenting the weighted sum with pa
 
 ## Dependencies
 The code is tested by server with RTX 1080Ti running in a docker container which includes the following packages:
-* python 3.6.3
-* tensorflow 1.4.0
-* numpy 1.13.3
-* scipy 1.0.0
-* networkx 2.0
+* python == 3.6.3
+* tensorflow == 1.4.0
+* numpy == 1.13.3
+* scipy == 1.0.0
+* networkx == 2.0
 
 In addition, CUDA 8 and cuDNN 6 have been used.
 
@@ -83,6 +83,72 @@ Epoch: 1059 train_loss= 1.74892 train_acc= 0.4000 val_loss= 1.76859 val_acc= 0.6
 Early stop!
 test_loss= 1.77275 test_acc= 0.7300
 early stop #epoch 582 val_loss= 1.77321 val_acc= 0.7120
+```
+### 2-layer BGCN-A
+* Command
+```
+cd BGCN/2-layer/BGCN-A/
+python gcn.py --model bgcn --dropout 0.6 --weight_decay 1e-4 --alpha 0.3 --beta 0.7 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79182 train_acc= 0.1333 val_loss= 1.79101 val_acc= 0.3180 tst_loss= 1.79108 tst_acc= 0.2940 time= 0.139
+Epoch: 0002 train_loss= 1.79003 train_acc= 0.4000 val_loss= 1.79026 val_acc= 0.4460 tst_loss= 1.79031 tst_acc= 0.4400 time= 0.067
+...
+Epoch: 1999 train_loss= 0.96810 train_acc= 0.9417 val_loss= 1.36601 val_acc= 0.7200 tst_loss= 1.35519 tst_acc= 0.7130 time= 0.056
+Epoch: 2000 train_loss= 0.94014 train_acc= 0.9167 val_loss= 1.36595 val_acc= 0.7200 tst_loss= 1.35513 tst_acc= 0.7130 time= 0.049
+test_loss= 1.37182 test_acc= 0.7140
+early stop #epoch 1727 val_loss= 1.38217 val_acc= 0.7240
+```
+### 2-layer BGCN-T
+* Command
+```
+cd BGCN/2-layer/BGCN-T/
+python gcn.py --model bgcn --dropout 0.0 --weight_decay 1e-4 --alpha 0.3 --beta 0.7 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79181 train_acc= 0.1083 val_loss= 1.79105 val_acc= 0.3120 tst_loss= 1.79096 tst_acc= 0.3390 time= 0.383
+Epoch: 0002 train_loss= 1.78918 train_acc= 0.6583 val_loss= 1.79016 val_acc= 0.4720 tst_loss= 1.79004 tst_acc= 0.4620 time= 0.086
+...
+Epoch: 1999 train_loss= 0.78423 train_acc= 0.9833 val_loss= 1.33716 val_acc= 0.7300 tst_loss= 1.31960 tst_acc= 0.7190 time= 0.059
+Epoch: 2000 train_loss= 0.78418 train_acc= 0.9833 val_loss= 1.33711 val_acc= 0.7300 tst_loss= 1.31955 tst_acc= 0.7190 time= 0.062
+test_loss= 1.31955 test_acc= 0.7190
+early stop #epoch 2000 val_loss= 1.33711 val_acc= 0.7300
+```
+### 2-layer BGAT-A
+* Command
+```
+cd BGAT/2-layer/BGAT-A/
+python gat.py --head 1 --hidden1 8 --feadrop 0.6 --attdrop 0.6 --weight_decay 5e-4 --alpha 0.7 --beta 0.3 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79191 train_acc= 0.1750 val_loss= 1.79127 val_acc= 0.2160 tst_loss= 1.79155 tst_acc= 0.2240 time= 5.875
+Epoch: 0002 train_loss= 1.79350 train_acc= 0.1750 val_loss= 1.79081 val_acc= 0.3400 tst_loss= 1.79107 tst_acc= 0.3310 time= 0.480
+...
+Epoch: 1116 train_loss= 1.41075 train_acc= 0.4417 val_loss= 1.47168 val_acc= 0.7160 tst_loss= 1.47457 tst_acc= 0.7180 time= 0.492
+Epoch: 1117 train_loss= 1.45948 train_acc= 0.4250 val_loss= 1.47192 val_acc= 0.7140 tst_loss= 1.47484 tst_acc= 0.7210 time= 0.462
+Early stop!
+test_loss= 1.46169 test_acc= 0.7410
+early stop #epoch 1016 val_loss= 1.46063 val_acc= 0.7440
+```
+### 2-layer BGAT-T
+* Command
+```
+cd BGAT/2-layer/BGAT-T/
+python gat.py --head 1 --hidden1 8 --feadrop 0.6 --attdrop 0.6 --weight_decay 1e-3 --alpha 0.5 --beta 0.5 --epochs 2000 --learning_rate 0.005
+```
+* Output
+```
+Epoch: 0001 train_loss= 1.79209 train_acc= 0.1833 val_loss= 1.79096 val_acc= 0.2120 tst_loss= 1.79143 tst_acc= 0.2230 time= 5.741
+Epoch: 0002 train_loss= 1.79474 train_acc= 0.1750 val_loss= 1.79024 val_acc= 0.3400 tst_loss= 1.79066 tst_acc= 0.3380 time= 0.457
+...
+Epoch: 0902 train_loss= 1.44180 train_acc= 0.4667 val_loss= 1.51039 val_acc= 0.7220 tst_loss= 1.50913 tst_acc= 0.7260 time= 0.465
+Epoch: 0903 train_loss= 1.48058 train_acc= 0.4167 val_loss= 1.51134 val_acc= 0.7220 tst_loss= 1.50986 tst_acc= 0.7290 time= 0.452
+Early stop!
+test_loss= 1.54286 test_acc= 0.7400
+early stop #epoch 492 val_loss= 1.54243 val_acc= 0.7440
 ```
 ## Dataset
 We utilize three benchmark datasets of citation network---Pubmed, Cora and Citeseer.
